@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1e3c72, #2a5298);
+  overflow: hidden;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+#score {
+  font-size: 1.5em;
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #fff700 30%, #fcd703 60%, transparent 70%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  transition: transform 0.4s ease, top 0.4s ease, left 0.4s ease;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #fff700;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+#level, #timer {
+  position: absolute;
+  top: 10px;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 10px;
+}
+#level { left: 10px; }
+#timer { right: 10px; }
+
+#character-screen {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+.characters img {
+  width: 100px;
+  margin: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.characters img:hover {
+  transform: scale(1.2);
+}
